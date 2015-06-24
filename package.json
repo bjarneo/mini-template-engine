@@ -4,7 +4,7 @@
   "description": "mini template engine",
   "main": "index.js",
   "scripts": {
-    "test":  "node_modules/mocha/bin/mocha test.js"
+    "test": "node_modules/mocha/bin/mocha test.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,6 @@
   "homepage": "https://github.com/bjarneo/mini-template-engine",
   "devDependencies": {
     "mocha": "~2.1.0"
-  }
+  },
+  "dependencies": {}
 }
