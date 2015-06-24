@@ -1,6 +1,8 @@
 Mini template engine.
 ===========
-![Travis](https://travis-ci.org/bjarneo/mini-template-engine.svg?branch=master) <br />
+![Travis](https://travis-ci.org/bjarneo/mini-template-engine.svg?branch=master) 
+[![Code Climate](https://codeclimate.com/github/bjarneo/mini-template-engine/badges/gpa.svg)](https://codeclimate.com/github/bjarneo/mini-template-engine)
+<br />
 
 This is a small easy template engine. It just replaces variable placeholders with objects passed to the function.
 
