@@ -42,4 +42,19 @@ console.log(otherStuff);
 // Output:
 // 'I want to add a word dynamic: JavaScript'
 
+var nested = template(
+    '<div class="{className}">{nested.content}</div>',
+    {
+        className: 'wrapper',
+        nested: {
+            content: 'So this is some not so useful content'
+        }
+    }
+);
+
+console.log(nested);
+
+// Template should now contain this html string:
+// '<div class="wrapper">So this is some not so useful content</div>'
+
 ```
