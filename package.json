@@ -4,6 +4,7 @@
   "description": "mini template engine",
   "main": "src/mini-template-engine.js",
   "scripts": {
+    "pretest": "jshint src/",
     "test": "node_modules/mocha/bin/mocha test/**/*.js"
   },
   "repository": {
