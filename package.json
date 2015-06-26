@@ -1,10 +1,10 @@
 {
   "name": "mini-template-engine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "mini template engine",
-  "main": "index.js",
+  "main": "src/mini-template-engine.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test.js"
+    "test": "node_modules/mocha/bin/mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,7 @@
   "devDependencies": {
     "mocha": "~2.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "is-object": "~1.0.1"
+  }
 }
