@@ -19,7 +19,7 @@ function miniTemplateEngine(str, props) {
     }
 
     if (!isString(str)) {
-        throw new Error('The first parameter needs to be a string')
+        throw new Error('The first parameter needs to be a string');
     }
 
     if (!props || !isObject(props)) {
