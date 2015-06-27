@@ -26,9 +26,8 @@ function miniTemplateEngine(str, props) {
         props = {};
     }
 
-    var template = new TemplateBuilder(str, props);
 
-    return template.getString();
+    return new TemplateBuilder(str, props).getString();
 }
 
 module.exports = miniTemplateEngine;
