@@ -2,7 +2,7 @@
 
 var isString = require('is-string');
 var isObject = require('is-object');
-var TemplateBuilder = require('./template-builder');
+var TemplateBuilder = require('./builders/template-builder');
 
 
 /**
@@ -26,8 +26,7 @@ function miniTemplateEngine(str, props) {
         props = {};
     }
 
-
-    return new TemplateBuilder(str, props).getString();
+    return new TemplateBuilder(str, props).getRenderedTemplate();
 }
 
 module.exports = miniTemplateEngine;
