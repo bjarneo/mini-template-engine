@@ -18,6 +18,24 @@ describe('mini template engine', function() {
         );
     });
 
+    it('should be able to use callback and return the template async', function() {
+        template(
+            '<div class="{className}">{content}</div>',
+            {
+                className: 'test',
+                content: 'loads of html content for you'
+            },
+            assertionCallback
+        );
+
+        function assertionCallback(template) {
+            assert.equal(
+                template,
+                '<div class="test">loads of html content for you</div>'
+            );
+        }
+    });
+
     it('should replace the placeholder variables with the properties as functions', function() {
         assert.equal(
             template(

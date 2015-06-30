@@ -2,6 +2,7 @@
 
 var isString = require('is-string');
 var isObject = require('is-object');
+var isFunction = require('is-function');
 var TemplateBuilder = require('./builders/template-builder');
 
 
@@ -13,20 +14,38 @@ var TemplateBuilder = require('./builders/template-builder');
  * @throws {Error} Throws an error if the first parameter is not a string
  * @returns {string}
  */
-function miniTemplateEngine(str, props) {
-    if (!str) {
-        return '';
+function miniTemplateEngine(str, props, callback) {
+    var isCallback = false,
+        errorString = 'The first parameter needs to be a string';
+
+    if (callback && isFunction(callback)) {
+        isCallback = true;
     }
 
-    if (!isString(str)) {
-        throw new Error('The first parameter needs to be a string');
+    if (!str) {
+        return '';
+    } else if (!isString(str) && !isCallback) {
+        throw new Error(errorString);
+    } else if (!isString(str) && isCallback) {
+        callback(null, errorString);
     }
 
     if (!props || !isObject(props)) {
         props = {};
     }
 
-    return new TemplateBuilder(str, props).getRenderedTemplate();
+    if (isCallback) {
+        setTimeout(function() {
+            return callback(
+                new TemplateBuilder(str, props)
+                    .getRenderedTemplate()
+            );
+        }, 1);
+    } else {
+        return new TemplateBuilder(str, props)
+            .getRenderedTemplate();
+    }
 }
+
 
 module.exports = miniTemplateEngine;
