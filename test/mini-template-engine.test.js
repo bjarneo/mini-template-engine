@@ -93,16 +93,4 @@ describe('mini template engine', function() {
             '<div class="{className}">{content}</div>'
         );
     });
-
-    it('should return empty string if nothing or empty string is passed', function() {
-        assert.equal(
-            template(),
-            ''
-        );
-
-        assert.equal(
-            template(''),
-            ''
-        );
-    });
 });
