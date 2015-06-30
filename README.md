@@ -49,7 +49,7 @@ var async = template(
             console.log(err);
         }
 
-        console.log(template,);
+        console.log(template);
     }
 );
 
