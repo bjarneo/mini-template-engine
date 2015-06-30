@@ -1,6 +1,6 @@
 {
   "name": "mini-template-engine",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "mini template engine",
   "main": "src/mini-template-engine.js",
   "scripts": {

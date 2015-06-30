@@ -16,18 +16,18 @@ var TemplateBuilder = require('./builders/template-builder');
  */
 function miniTemplateEngine(str, props, callback) {
     var isCallback = false,
-        errorString = 'The first parameter needs to be a string';
+        errorString = 'The first parameter must be a string';
 
     if (callback && isFunction(callback)) {
         isCallback = true;
     }
 
-    if (!str) {
-        return '';
-    } else if (!isString(str) && !isCallback) {
-        throw new Error(errorString);
-    } else if (!isString(str) && isCallback) {
-        callback(null, errorString);
+    if (!str || !isString(str)) {
+        if (isCallback) {
+            callback(null, errorString);
+        } else {
+            throw new Error(errorString);
+        }
     }
 
     if (!props || !isObject(props)) {
